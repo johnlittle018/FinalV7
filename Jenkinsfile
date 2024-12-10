@@ -13,17 +13,17 @@ pipeline {
                 sh './gradlew build'
             }
         }
-//         stage('Test') {
-//             steps {
-//                 //echo 'Testing version ${parameters.VERSION}'
-//                 echo 'Testing Project...'
-//                 sh './gradlew test'
-//             }
-//             post {
-//                 always {
-//                     junit "build/reports/tests/**/*.html"
-//                 }
-//             }
-//         }
+        stage('Test') {
+            steps {
+                //echo 'Testing version ${parameters.VERSION}'
+                echo 'Testing Project...'
+                sh './gradlew test'
+            }
+            post {
+                always {
+                    junit "build/reports/tests/**/*.html"
+                }
+            }
+        }
     }
 }
